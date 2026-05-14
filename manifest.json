@@ -1,5 +1,5 @@
 {
-  "name": "enhanced-h264ify",
+  "name": "PalmTube Focus",
   "version": "2.2.1",
   "manifest_version": 3,
   "description": "__MSG_extensionDescription__",
@@ -15,7 +15,7 @@
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     },
-    "default_title": "enhanced-h264ify",
+    "default_title": "PalmTube Focus",
     "default_popup": "options.html"
   },
   "content_scripts": [
@@ -49,5 +49,7 @@
   "options_ui": {
     "page": "options.html"
   },
-  "permissions": [ "storage" ]
+  "permissions": [
+    "storage"
+  ]
 }

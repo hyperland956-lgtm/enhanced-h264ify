@@ -9,6 +9,7 @@ function save_options() {
   var block_mp4a = document.getElementById('block_mp4a').checked;
   // LN stands for Loudness Normalization
   var disable_LN = document.getElementById('disable_LN').checked;
+  var block_distractions = document.getElementById('block_distractions').checked;
   chrome.storage.local.set({
     block_60fps: block_60fps,
     block_h264: block_h264,
@@ -17,7 +18,8 @@ function save_options() {
     block_av1: block_av1,
     block_opus: block_opus,
     block_mp4a: block_mp4a,
-    disable_LN: disable_LN
+    disable_LN: disable_LN,
+    block_distractions: block_distractions
   });
 }
 
@@ -32,7 +34,8 @@ function restore_options() {
     block_av1: true,
     block_opus: false,
     block_mp4a: false,
-    disable_LN: false
+    disable_LN: false,
+    block_distractions: false
   }, function(options) {
     document.getElementById('block_60fps').checked = options.block_60fps;
     document.getElementById('block_h264').checked = options.block_h264;
@@ -42,6 +45,7 @@ function restore_options() {
     document.getElementById('block_opus').checked = options.block_opus;
     document.getElementById('block_mp4a').checked = options.block_mp4a;
     document.getElementById('disable_LN').checked = options.disable_LN;
+    document.getElementById('block_distractions').checked = options.block_distractions;
   });
 }
 
