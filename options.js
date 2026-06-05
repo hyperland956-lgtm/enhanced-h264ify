@@ -1,6 +1,7 @@
 // Saves options to chrome.storage
 function save_options() {
   var block_60fps = document.getElementById('block_60fps').checked;
+  var block_50fps = document.getElementById('block_50fps').checked;
   var block_h264 = document.getElementById('block_h264').checked;
   var block_vp8 = document.getElementById('block_vp8').checked;
   var block_vp9 = document.getElementById('block_vp9').checked;
@@ -12,6 +13,7 @@ function save_options() {
   var block_distractions = document.getElementById('block_distractions').checked;
   chrome.storage.local.set({
     block_60fps: block_60fps,
+    block_50fps: block_50fps,
     block_h264: block_h264,
     block_vp8: block_vp8,
     block_vp9: block_vp9,
@@ -28,6 +30,7 @@ function restore_options() {
   // Default values
   chrome.storage.local.get({
     block_60fps: false,
+    block_50fps: false,
     block_h264: false,
     block_vp8: true,
     block_vp9: true,
@@ -38,6 +41,7 @@ function restore_options() {
     block_distractions: false
   }, function(options) {
     document.getElementById('block_60fps').checked = options.block_60fps;
+    document.getElementById('block_50fps').checked = options.block_50fps;
     document.getElementById('block_h264').checked = options.block_h264;
     document.getElementById('block_vp8').checked = options.block_vp8;
     document.getElementById('block_vp9').checked = options.block_vp9;
