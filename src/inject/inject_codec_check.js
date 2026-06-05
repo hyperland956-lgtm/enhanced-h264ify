@@ -72,6 +72,11 @@ function makeModifiedTypeChecker(origChecker) {
       if (match && match[1] > 30) return '';
     }
 
+    if (localStorage['enhanced-h264ify-block_50fps'] === 'true') {
+      var match50 = /framerate=(\d+)/.exec(type);
+      if (match50 && match50[1] > 25 && match50[1] <= 30) return '';
+    }
+
     // Otherwise, ask the browser
     return origChecker(type);
   };
