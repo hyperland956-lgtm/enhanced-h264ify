@@ -9,6 +9,9 @@
   "optionsBlock60fps": {
     "message": "Block 60fps video"
   },
+  "optionsBlock50fps": {
+    "message": "Block 50fps video"
+  },
   "optionsBlockH264": {
     "message": "Block h264 (AVC)"
   },
